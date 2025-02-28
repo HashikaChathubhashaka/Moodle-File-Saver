@@ -1,0 +1,24 @@
+
+
+{
+  "manifest_version": 3,
+  "name": "Moodle File Saver",
+  "version": "1.0",
+  "description": "Retrieves the Moodle course name and code from the page for managing downloads through the Moodle File Saver application.",
+  "permissions": ["activeTab", "storage", "downloads"],
+  "host_permissions": ["https://online.uom.lk/*"],
+  "content_scripts": [
+      {
+          "matches": ["https://online.uom.lk/*"],
+          "js": ["content.js"]
+      }
+  ],
+  "background": {
+      "service_worker": "background.js"  
+  },
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": "image.png"
+  }
+}
+
